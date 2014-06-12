@@ -1,0 +1,17 @@
+<%@ val person: name.dargiri.web.controller.PeopleController.PersonForm %>
+<div class="page-header">
+<h1>Person</h1>
+</div>
+
+<form role="form" method="post" id="userEditForm">
+    <div class="form-group">
+        <label for="id">#</label>
+        <input type="hidden" class="form-control" name="id" placeholder="#" value="<%=person.id%>" readonly>
+        <input type="text" class="form-control" id="id" placeholder="#" value="<%=person.id%>" readonly>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<%=person.name%>">
+    </div>
+        <button type="submit" class="btn btn-default">Save</button>
+</form>

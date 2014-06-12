@@ -1,0 +1,29 @@
+<%@ val people: java.util.List[name.dargiri.web.controller.PeopleController.PersonForm]%>
+<div class="page-header">
+<h1>People</h1>
+</div>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <% for(person <- people ) { %>
+    <tr>
+        <td>
+            <%=person.id%>
+        </td>
+        <td>
+            <%=person.name%>
+        </td>
+        <td>
+            <a href="<%=uri("/people/edit/" + person.id)%>">Edit</a> |
+            <a href="<%=uri("/people/delete/" + person.id)%>">Delete</a>
+        </td>
+    </tr>
+    <% } %>
+</tbody>
+</table>
