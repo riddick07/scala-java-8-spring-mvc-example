@@ -22,6 +22,7 @@ public class Person extends AbstractModel<UUID> implements Model<UUID> {
     private String jobPosition;
     private List<Account> accounts;
     private String aboutMe;
+    private SystemUser systemUser;
     private Set<Relative> relations = new HashSet<Relative>();
 
     @Override
@@ -54,6 +55,12 @@ public class Person extends AbstractModel<UUID> implements Model<UUID> {
     @OneToMany(mappedBy = "person", targetEntity = Account.class, cascade = CascadeType.ALL)
     public List<Account> getAccounts() {
         return accounts;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "system_user_id")
+    public SystemUser getSystemUser() {
+        return systemUser;
     }
 
     @Column
@@ -96,6 +103,10 @@ public class Person extends AbstractModel<UUID> implements Model<UUID> {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void setSystemUser(SystemUser systemUser) {
+        this.systemUser = systemUser;
     }
 
     public void setMobilePhone(String mobilePhone) {
