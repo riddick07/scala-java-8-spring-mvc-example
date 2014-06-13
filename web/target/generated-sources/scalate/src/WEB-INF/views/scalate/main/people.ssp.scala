@@ -21,7 +21,7 @@ object $_scalate_$people_ssp {
         $_scalate_$_context <<< (         person.id
  );
         $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
-        $_scalate_$_context <<< (         person.username
+        $_scalate_$_context <<< (         person.name
  );
         $_scalate_$_context << ( "\n        </td>\n        <td>\n            <a href=\"" );
         $_scalate_$_context <<< (         uri("/people/edit/" + person.id)
@@ -32,8 +32,7 @@ object $_scalate_$people_ssp {
         $_scalate_$_context << ( "\">Delete</a>\n        </td>\n    </tr>\n    " );
                  } 
 
-        $_scalate_$_context << ( "</tbody>\n</table>\n" );
-        $_scalate_$_context << ( "\n" );
+        $_scalate_$_context << ( "</tbody>\n</table>" );
       }
     }
   }

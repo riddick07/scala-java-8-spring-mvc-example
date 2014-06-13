@@ -27,7 +27,7 @@ public class PersonDAOImplTest extends SpringDbTest {
     @Test
     public void Person_should_have_id_assigned_when_created() {
         Person entity = new Person();
-        entity.setUsername("dionis");
+        entity.setName("dionis");
         dao.persist(entity);
 
         assertTrue(entity.getId() != null);
@@ -37,7 +37,7 @@ public class PersonDAOImplTest extends SpringDbTest {
     public void
     it_should_be_found_by_id_after_persisting() {
         Person entity = new Person();
-        entity.setUsername("dionis");
+        entity.setName("dionis");
         dao.persist(entity);
 
         assertTrue(entity.getId() != null);
@@ -51,7 +51,7 @@ public class PersonDAOImplTest extends SpringDbTest {
     @Test
     public void it_should_not_be_found_by_id_if_not_found() {
         Person entity = new Person();
-        entity.setUsername("dionis");
+        entity.setName("dionis");
         dao.persist(entity);
 
         assertTrue(entity.getId() != null);

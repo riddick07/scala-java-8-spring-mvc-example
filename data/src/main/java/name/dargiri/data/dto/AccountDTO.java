@@ -2,6 +2,7 @@ package name.dargiri.data.dto;
 
 import name.dargiri.data.dto.enums.AccountTypeEnum;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -12,11 +13,13 @@ public class AccountDTO {
     public final UUID id;
     public final AccountTypeEnum type;
     public final String title;
+    public final List<MessageDTO> messages;
 
-    public AccountDTO(UUID id, AccountTypeEnum type, String title) {
+    public AccountDTO(UUID id, AccountTypeEnum type, String title, List<MessageDTO> messages) {
         this.id = id;
         this.type = type;
         this.title = title;
+        this.messages = messages;
     }
 
     public UUID getId() {

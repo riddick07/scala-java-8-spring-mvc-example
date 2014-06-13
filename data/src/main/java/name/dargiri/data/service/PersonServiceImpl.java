@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Created by dionis on 2/3/14.
+ *
  */
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -32,7 +32,7 @@ public class PersonServiceImpl implements PersonService {
     public PersonDTO update(PersonDTO dto) {
         Person person = personDAO.find(dto.getId());
         if (person != null) {
-            person.setUsername(dto.getName());
+            person.setName(dto.getName());
             personDAO.persist(person);
             return toDTO(person);
         } else {
@@ -72,13 +72,13 @@ public class PersonServiceImpl implements PersonService {
 
 
     private PersonDTO toDTO(Person person) {
-        return new PersonDTO(person.getId(), person.getUsername());
+        return new PersonDTO(person.getId(), person.getName(), null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     }
 
     private Person toEntity(PersonDTO dto) {
         Person person = new Person();
         person.setId(dto.getId());
-        person.setUsername(dto.getName());
+        person.setName(dto.getName());
         return person;
     }
 }

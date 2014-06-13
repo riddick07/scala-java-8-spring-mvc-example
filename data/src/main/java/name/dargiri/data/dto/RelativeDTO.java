@@ -12,9 +12,9 @@ public class RelativeDTO {
 
     public final UUID id;
     public final RelationTypeEnum relation;
-    public final Person person;
+    public final PersonDTO person;
 
-    public RelativeDTO(UUID id, RelationTypeEnum relation, Person person) {
+    public RelativeDTO(UUID id, RelationTypeEnum relation, PersonDTO person) {
         this.id = id;
         this.relation = relation;
         this.person = person;
@@ -37,7 +37,7 @@ public class RelativeDTO {
         return relation;
     }
 
-    public Person getPerson() {
+    public PersonDTO getPerson() {
         return person;
     }
 }

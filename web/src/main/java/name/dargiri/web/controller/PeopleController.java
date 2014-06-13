@@ -50,7 +50,7 @@ public class PeopleController {
     private PersonDTO toDTO(PersonForm personForm)
 
     {
-        return new PersonDTO(personForm.id, personForm.username);
+        return new PersonDTO(personForm.getId(), personForm.getUsername(), null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     }
 
     @RequestMapping(value = "/edit/{id}")
@@ -94,7 +94,7 @@ public class PeopleController {
         }
 
         public UUID id;
-        public String username;
+        public String name;
 
         public UUID getId() {
             return id;
@@ -105,11 +105,11 @@ public class PeopleController {
         }
 
         public String getUsername() {
-            return username;
+            return name;
         }
 
         public void setUsername(String username) {
-            this.username = username;
+            this.name = username;
         }
     }
 }

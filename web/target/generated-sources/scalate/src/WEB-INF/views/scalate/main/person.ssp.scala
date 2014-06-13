@@ -20,8 +20,8 @@ object $_scalate_$person_ssp {
         $_scalate_$_context << ( "\" readonly>\n        <input type=\"text\" class=\"form-control\" id=\"id\" placeholder=\"#\" value=\"" );
         $_scalate_$_context <<< (         person.id
  );
-        $_scalate_$_context << ( "\" readonly>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">Username</label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" placeholder=\"Username\" value=\"" );
-        $_scalate_$_context <<< (         person.username
+        $_scalate_$_context << ( "\" readonly>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"username\">User name</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
+        $_scalate_$_context <<< (         person.name
  );
         $_scalate_$_context << ( "\">\n    </div>\n        <button type=\"submit\" class=\"btn btn-default\">Save</button>\n</form>\n" );
       }
