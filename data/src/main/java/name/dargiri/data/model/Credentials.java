@@ -10,10 +10,10 @@ import java.util.UUID;
 public class Credentials extends AbstractModel<UUID> implements Model<UUID> {
 
     private UUID id;
-//    private SystemUser systemUser;
     private String email;
     private String password;
     private String controlPhrase;
+    private SystemUser systemUser;
 
     public Credentials() {
     }
@@ -30,9 +30,10 @@ public class Credentials extends AbstractModel<UUID> implements Model<UUID> {
         return id;
     }
 
-//    public SystemUser getSystemUser() {
-//        return systemUser;
-//    }
+    @OneToOne(optional=false, mappedBy="credentials")
+    public SystemUser getSystemUser() {
+        return systemUser;
+    }
 
     @Column(unique = true)
     public String getEmail() {
@@ -53,9 +54,9 @@ public class Credentials extends AbstractModel<UUID> implements Model<UUID> {
         this.id = id;
     }
 
-//    public void setSystemUser(SystemUser systemUser) {
-//        this.systemUser = systemUser;
-//    }
+    public void setSystemUser(SystemUser systemUser) {
+        this.systemUser = systemUser;
+    }
 
     public void setEmail(String email) {
         this.email = email;

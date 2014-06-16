@@ -14,14 +14,26 @@ object $_scalate_$people_ssp {
       
       ;{
         val people: java.util.List[name.dargiri.web.controller.PeopleController.PersonForm] = $_scalate_$_context.attribute("people")
-        $_scalate_$_context << ( "<div class=\"page-header\">\n<h1>People</h1>\n</div>\n<table class=\"table table-striped\">\n<thead>\n    <tr>\n        <th>#</th>\n        <th>Username</th>\n        <th>Action</th>\n    </tr>\n</thead>\n<tbody>\n    " );
+        $_scalate_$_context << ( "<div class=\"page-header\">\n<h1>People</h1>\n</div>\n<table class=\"table table-striped\">\n<thead>\n    <tr>\n        <th>Sex</th>\n        <th>Name</th>\n        <th>Surname</th>\n        <th>Date of bith</th>\n        <th>Phone number</th>\n        <th>Job position</th>\n        <th>Action</th>\n    </tr>\n</thead>\n<tbody>\n    " );
                  for(person <- people ) { 
 
         $_scalate_$_context << ( "    <tr>\n        <td>\n            " );
-        $_scalate_$_context <<< (         person.id
+        $_scalate_$_context <<< (         person.sex
  );
         $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
         $_scalate_$_context <<< (         person.name
+ );
+        $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
+        $_scalate_$_context <<< (         person.surname
+ );
+        $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
+        $_scalate_$_context <<< (         person.dob
+ );
+        $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
+        $_scalate_$_context <<< (         person.mobilePhone
+ );
+        $_scalate_$_context << ( "\n        </td>\n        <td>\n            " );
+        $_scalate_$_context <<< (         person.job
  );
         $_scalate_$_context << ( "\n        </td>\n        <td>\n            <a href=\"" );
         $_scalate_$_context <<< (         uri("/people/edit/" + person.id)

@@ -23,6 +23,18 @@ object $_scalate_$person_ssp {
         $_scalate_$_context << ( "\" readonly>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"username\">User name</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
         $_scalate_$_context <<< (         person.name
  );
+        $_scalate_$_context << ( "\">\n        <label for=\"username\">User surname</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
+        $_scalate_$_context <<< (         person.surname
+ );
+        $_scalate_$_context << ( "\">\n        <label for=\"username\">Job position</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
+        $_scalate_$_context <<< (         person.job
+ );
+        $_scalate_$_context << ( "\">\n        <label for=\"username\">Mobile phone number</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
+        $_scalate_$_context <<< (         person.mobilePhone
+ );
+        $_scalate_$_context << ( "\">\n        <label for=\"username\">About me</label>\n        <input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" placeholder=\"Username\" value=\"" );
+        $_scalate_$_context <<< (         person.aboutMe
+ );
         $_scalate_$_context << ( "\">\n    </div>\n        <button type=\"submit\" class=\"btn btn-default\">Save</button>\n</form>\n" );
       }
     }

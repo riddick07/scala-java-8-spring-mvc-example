@@ -46,7 +46,6 @@ public class PeopleController {
         return new ModelAndView("redirect:/people/all");
     }
 
-
     private PersonDTO toDTO(PersonForm personForm)
 
     {
@@ -90,11 +89,22 @@ public class PeopleController {
             PersonForm form = new PersonForm();
             form.setId(dto.id);
             form.setUsername(dto.name);
+            form.setSurname(dto.surname);
+            form.setJob(dto.jobPosition);
+            form.setSex(dto.sex);
+            form.setDob(dto.dob);
+            form.setAboutMe(dto.aboutMe);
             return form;
         }
 
         public UUID id;
         public String name;
+        public String surname;
+        public String sex;
+        public String dob;
+        public String mobilePhone;
+        public String job;
+        public String aboutMe;
 
         public UUID getId() {
             return id;
@@ -110,6 +120,62 @@ public class PeopleController {
 
         public void setUsername(String username) {
             this.name = username;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getAboutMe() {
+            return aboutMe;
+        }
+
+        public void setAboutMe(String aboutMe) {
+            this.aboutMe = aboutMe;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getSurname() {
+            return surname;
+        }
+
+        public void setSurname(String surname) {
+            this.surname = surname;
+        }
+
+        public String getSex() {
+            return sex;
+        }
+
+        public void setSex(String sex) {
+            this.sex = sex;
+        }
+
+        public String getDob() {
+            return dob;
+        }
+
+        public void setDob(String dob) {
+            this.dob = dob;
+        }
+
+        public String getMobilePhone() {
+            return mobilePhone;
+        }
+
+        public void setMobilePhone(String mobilePhone) {
+            this.mobilePhone = mobilePhone;
+        }
+
+        public String getJob() {
+            return job;
+        }
+
+        public void setJob(String job) {
+            this.job = job;
         }
     }
 }

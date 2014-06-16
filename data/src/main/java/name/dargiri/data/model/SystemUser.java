@@ -20,6 +20,7 @@ public class SystemUser extends AbstractModel<UUID> implements Model<UUID> {
     private String surname;
     private String phone;
     private Set<Person> persons = new HashSet<>();
+    private Credentials credentials;
 
     public SystemUser() {
     }
@@ -39,6 +40,13 @@ public class SystemUser extends AbstractModel<UUID> implements Model<UUID> {
     @OneToMany(mappedBy = "systemUser", targetEntity = Person.class, cascade = CascadeType.ALL)
     public Set<Person> getPersons() {
         return persons;
+    }
+
+    @OneToOne(optional=false)
+    @JoinColumn(
+            name="credentials_id", unique=true, nullable=false, updatable=false)
+    public Credentials getCredentials() {
+        return credentials;
     }
 
     @Column
@@ -92,5 +100,9 @@ public class SystemUser extends AbstractModel<UUID> implements Model<UUID> {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public void setCredentials(Credentials credentials) {
+        this.credentials = credentials;
     }
 }
